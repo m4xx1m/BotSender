@@ -160,7 +160,6 @@ class Ui_MainWindow(object):
 
     def closeEvent(self, event):
         global bot
-        # print('\n'.join(dir(bot)))
         try:
             QtWidgets.QApplication.processEvents()
             loop.run_until_complete(bot.close())
