@@ -120,6 +120,7 @@ class Ui_MainWindow(object):
         global bot
         try:
             for i in range(self.spinBox.value()):
+                QtWidgets.QApplication.processEvents()
                 loop.run_until_complete(bot.send_message(
                     self.lineEdit_3.text(),
                     self.lineEdit_2.text()
@@ -138,6 +139,7 @@ class Ui_MainWindow(object):
     def loginbot(self):
         global bot
         try:
+            QtWidgets.QApplication.processEvents()
             bot = Bot(
                 token=self.lineEdit.text()
             )
@@ -160,6 +162,7 @@ class Ui_MainWindow(object):
         global bot
         # print('\n'.join(dir(bot)))
         try:
+            QtWidgets.QApplication.processEvents()
             loop.run_until_complete(bot.close())
         except Exception as err:
             print(err)
